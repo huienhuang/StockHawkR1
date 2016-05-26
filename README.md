@@ -1,10 +1,13 @@
 # Stock Hawk R1 - Nano Degree<br/>
 <br/>
-fixed bugs<br/>
-pull quote data from Yahoo API every 3secs<br/>
-add home widget<br/>
-rewrite database schema, record quote change every 5mins<br/>
-add swipeable LineCharts, able to switch time interval between minute, hour or day by scale-gesture<br/>
-add Egypt translation File<br/>
-visual impaired friendly<br/>
-
+Added home widget.<br/>
+Rewrited database schema.<br/>
+Added swipeable LineCharts.<br/>
+Added Egypt translation File.<br/>
+Visual impaired friendly.<br/>
+Fixed minor bugs<br/>
+<br/>
+<br/>
+In the ChartView, it's able to switch time interval between minute, hour or day by scale-gesture.<br/>
+The app records quote change every 5 minutes now.<br/>
+The data pulling period is 3 seconds when the app is foreground.<br/>
