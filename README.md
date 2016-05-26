@@ -1,4 +1,4 @@
-Stock Hawk R1 - Nano Degree
+# Stock Hawk R1 - Nano Degree
 
 fixed bugs
 pull quote data from Yahoo API every 3secs
