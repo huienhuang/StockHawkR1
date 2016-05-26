@@ -3,27 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="72dp"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     >
+  <LinearLayout
+      android:id="@+id/list_item_quote"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      >
   <TextView
       android:id="@+id/stock_symbol"
+      android:focusable="true"
       style="@style/StockSymbolTextStyle"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:gravity="left|center_vertical"
-      tools:text="GOOG"
+      tools:text="Loading..."
       />
   <LinearLayout
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_weight="1"
-      android:gravity="right"
-      >
+      android:gravity="right">
     <TextView
         android:id="@+id/bid_price"
+        android:focusable="true"
         style="@style/BidPriceTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,6 +38,7 @@
         />
     <TextView
         android:id="@+id/change"
+        android:focusable="true"
         android:background="@drawable/percent_change_pill"
         style="@style/PercentChangeTextStyle"
         android:layout_width="wrap_content"
@@ -40,5 +47,6 @@
         android:paddingRight="3dp"
         tools:text="100%"
         />
+  </LinearLayout>
   </LinearLayout>
 </LinearLayout>

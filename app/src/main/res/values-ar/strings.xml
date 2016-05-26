@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    Please put Egypt translations here
+    -->
+
+    <string name="app_name">الأسهم هوك</string>
+    <string name="network_lost">الإنترنت غير متوفر!</string>
+</resources>
