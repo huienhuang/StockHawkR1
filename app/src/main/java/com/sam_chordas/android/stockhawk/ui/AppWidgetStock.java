@@ -34,13 +34,14 @@ public class AppWidgetStock extends AppWidgetProvider {
         views.setOnClickPendingIntent(R.id.textView_widget_title, pendingIntent);
 
         Intent clickIntent = new Intent(context, MyChartActivity.class);
-        PendingIntent clickPendingIntent = PendingIntent.getActivity(context, 0, clickIntent, 0);
+        PendingIntent clickPendingIntent = TaskStackBuilder.create(context)
+                .addNextIntentWithParentStack(clickIntent)
+                .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+
         views.setPendingIntentTemplate(R.id.listView_widget_list, clickPendingIntent);
 
         views.setRemoteAdapter(R.id.listView_widget_list, new Intent(context, AppWidgetStockService.class));
         views.setEmptyView(R.id.listView_widget_list, R.id.listView_widget_list_empty);
-
-
 
 
         // Instruct the widget manager to update the widget
