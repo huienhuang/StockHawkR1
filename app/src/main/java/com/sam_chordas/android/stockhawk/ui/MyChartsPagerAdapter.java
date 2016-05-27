@@ -232,7 +232,7 @@ public class MyChartsPagerAdapter extends FragmentStatePagerAdapter implements V
                     MyPoint pt = (MyPoint)mLineChartView.getData().get(setIndex).getEntry(entryIndex);
 
                     if(pt.mUpdatedTs == 0) {
-                        mTextViewTooltip.setText("No Data Recorded");
+                        mTextViewTooltip.setText(getString(R.string.no_data_recorded));
                     } else {
                         Date dt = new Date();
                         dt.setTime(pt.mUpdatedTs);

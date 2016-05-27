@@ -81,7 +81,7 @@ public class Utils {
         return null;
       }
 
-      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+      //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 
       String change = jsonObject.getString("Change");
 

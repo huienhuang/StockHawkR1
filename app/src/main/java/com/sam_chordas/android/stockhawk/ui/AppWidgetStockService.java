@@ -104,7 +104,7 @@ public class AppWidgetStockService extends RemoteViewsService {
             @Override
             public long getItemId(int position) {
                 if(mCursor != null && mCursor.move(position))
-                    return (int)mCursor.getInt(
+                    return (long)mCursor.getInt(
                             mCursor.getColumnIndex(QuoteExDatabase.QuoteColumns._ID));
 
                 return -1;

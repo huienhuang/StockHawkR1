@@ -10,6 +10,7 @@ import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.widget.Toast;
 
 import com.google.android.gms.gcm.GcmNetworkManager;
@@ -174,7 +175,9 @@ public class StockTaskService extends GcmTaskService {
     new Handler(Looper.getMainLooper()).post(new Runnable() {
       @Override
       public void run() {
-        Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
+        Toast toast = Toast.makeText(context, msg, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, Gravity.CENTER, 0);
+        toast.show();
         //Log.i("PKT", "Toast");
       }
     });

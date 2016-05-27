@@ -132,26 +132,33 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                           new String[] { QuoteExDatabase.QuoteColumns.SYMBOL },
                           QuoteExDatabase.QuoteColumns.SYMBOL + "= ?",
                           new String[] { input.toString().toUpperCase() }, null);
-                  if (c.getCount() != 0) {
-                    Toast toast =
-                        Toast.makeText(MyStocksActivity.this, "This stock is already saved!",
-                            Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.CENTER, Gravity.CENTER, 0);
-                    toast.show();
-                    return;
-                  } else {
-                    // Add the stock to DB
-                    if(input.toString().matches("[^\"']+")) {
-                      mServiceIntent.putExtra("tag", "add");
-                      mServiceIntent.putExtra("symbol", input.toString());
-                      startService(mServiceIntent);
-                    } else {
-                      Toast.makeText(MyStocksActivity.this, "Invalid Input",
-                              Toast.LENGTH_LONG).show();
 
+                    try {
+                      if (c != null && c.getCount() != 0) {
+                        Toast toast =
+                                Toast.makeText(MyStocksActivity.this, getString(R.string.symbol_exists),
+                                        Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, Gravity.CENTER, 0);
+                        toast.show();
+
+                      } else {
+                        // Add the stock to DB
+                        if (input.toString().matches("[^\"']+")) {
+                          mServiceIntent.putExtra("tag", "add");
+                          mServiceIntent.putExtra("symbol", input.toString());
+                          startService(mServiceIntent);
+                        } else {
+                          Toast.makeText(MyStocksActivity.this, getString(R.string.invalid_input),
+                                  Toast.LENGTH_LONG).show();
+
+                        }
+
+                      }
+                    } finally {
+                      if(c != null)
+                        c.close();
                     }
 
-                  }
                 }
               })
               .show();
