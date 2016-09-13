@@ -11,3 +11,9 @@ Fixed minor bugs<br/>
 In the ChartView, it's able to switch time interval between minute, hour or day by scale-gesture.<br/>
 The app records quote changes every 5 minutes now.<br/>
 The data pulling period is 3 seconds when the app is in foreground.<br/>
+
+
+# Screenshots
+
+![](https://raw.githubusercontent.com/michaelhuang8192/StockHawkR1/master/screenshot_1.jpg)
+![](https://raw.githubusercontent.com/michaelhuang8192/StockHawkR1/master/screenshot_2.jpg)
